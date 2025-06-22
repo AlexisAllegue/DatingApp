@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { map, retry } from 'rxjs';
 import { User } from '../_models/user';
-import { useAnimation } from '@angular/animations';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +20,7 @@ export class AccountService {
         }
       }
       )
-    );
+    )
   }
   register(model: any) {
     return this.http.post<User>(this.baseUrl + 'account/register', model).pipe(
